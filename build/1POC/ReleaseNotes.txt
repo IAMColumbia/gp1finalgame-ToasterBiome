@@ -1,1 +1,12 @@
-Release Notes version 1 POC
+# Mega Awesome Mining Robot Game POC
+
+- Cool Robot (that's you)
+You are the robot. You run on electricity.
+- Mr. Bad Guy Spider Enemies
+They are bad guys. They run on being bad.
+- Robust Item System
+Collect some ores with your laser.
+- Battery Charging
+You run on batteries. Step on the charging pad or you'll be really slow and can't shoot.
+- Mining Asteroid
+You are on an asteroid. You have a laser. You shoot the asteroid. You get ores.
