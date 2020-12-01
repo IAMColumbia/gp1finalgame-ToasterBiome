@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public Tilemap floorMap;
     public Tilemap wallMap;
 
+
+    public PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {

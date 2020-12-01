@@ -10,6 +10,8 @@ public class LaserGun : MonoBehaviour
 
     public GameObject offset;
 
+    public float energyUse = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +35,16 @@ public class LaserGun : MonoBehaviour
         shotCooldown -= Time.deltaTime;
         if(Input.GetMouseButton(0))
         {
-            if(shotCooldown <= 0)
+            if(GameManager.instance.player.battery.CanUse(energyUse))
             {
-                Instantiate(projectile, offset.transform.position, transform.rotation);
-                shotCooldown = maxShotCooldown;
+                if (shotCooldown <= 0)
+                {
+                    Instantiate(projectile, offset.transform.position, transform.rotation);
+                    shotCooldown = maxShotCooldown;
+                    GameManager.instance.player.battery.charge -= energyUse;
+                }
             }
+                
         }
     }
 }

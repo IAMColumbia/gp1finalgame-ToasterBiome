@@ -39,14 +39,24 @@ public class Projectile : MonoBehaviour
                     GameManager.instance.wallMap.SetTile(location, null);
                 }
 
-                if (tile.name == "Ore")
+
+
+                if (tile.GetType() == typeof(DropTile))
                 {
-                    Inventory.instance.oreAmount += 5;
+                    DropTile dropTile = (DropTile)tile;
+                    Vector3 centeredLocation = new Vector2(location.x + 0.5f, location.y + 0.5f);
+                    Instantiate(dropTile.drop, centeredLocation, Quaternion.identity);
                     GameManager.instance.wallMap.SetTile(location, null);
                 }
             }
-            
 
+            Destroy(gameObject);
+
+        }
+
+        if(collision.gameObject.name == "Mr. Bad Guy")
+        {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
         
