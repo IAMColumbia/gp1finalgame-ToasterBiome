@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2aa556de1c6b11419590f4a0182f24b, type: 3}
   m_Name: Cobalt Ore
   m_EditorClassIdentifier: 
-  description: 
+  description: Rare and valuable.
   Name: Cobalt Ore
   sprite: {fileID: 21300000, guid: 4ab40ca28b9324f4296c8d6b9a2b4f0c, type: 3}
   id: 869f7613666b9024fa8df2520b8f9df3

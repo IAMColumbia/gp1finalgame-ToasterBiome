@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI oreText;
 
     public List<ItemStack> items;
+    public List<ItemSlot> itemSlots;
 
     // Start is called before the first frame update
     void Start()
@@ -122,6 +123,11 @@ public class Inventory : MonoBehaviour
         foreach(ItemStack itemStack in items)
         {
             oreText.text += itemStack.item.name + ": " + itemStack.amount + "\n";
+        }
+
+        for(int i = 0; i < items.Count; i++)
+        {
+            itemSlots[i].Item = items[i];
         }
     }
 

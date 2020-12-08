@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
 
     public TileBase currentTile;
 
+    public List<GameObject> weapons;
+
+    public GameObject currentWeapon;
 
 
     // Start is called before the first frame update
@@ -42,6 +45,9 @@ public class PlayerController : MonoBehaviour
         {
             battery.charge += 4 * Time.deltaTime;
         }
+
+
+        
     }
 
     private void FixedUpdate()

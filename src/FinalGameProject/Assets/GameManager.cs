@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerController player;
 
+    public GameObject inventoryWindow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            inventoryWindow.SetActive(!inventoryWindow.activeSelf);
+        }
     }
 }
