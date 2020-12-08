@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
 
     public GameObject inventoryWindow;
+    public GameObject researchWindow;
 
     // Start is called before the first frame update
     void Start()

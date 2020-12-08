@@ -26,6 +26,7 @@ public class Item : ScriptableObject
 
     [Range(1,999)]
     public int maxStack = 999;
+    public int researchValue;
 
 
 

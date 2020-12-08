@@ -17,3 +17,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: e7fcee7d385a9cd419ed9bb1e881bdab, type: 3}
   id: aac75c8bf71bacb45835d9a38c117b16
   maxStack: 999
+  researchValue: 4
