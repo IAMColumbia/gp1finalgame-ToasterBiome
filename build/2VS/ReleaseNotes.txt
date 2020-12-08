@@ -1,1 +1,9 @@
 Release Notes version 2 Vertical Slice
+
+- You now have a ship with a smelter and a research console.
+	- Right click the smelter to smelt all your ores. Right now they are just destroyed which is okay because you can't make anything yet!
+	- Right click the research console to see your available research points. They are unusable right now because there's nothing to research!
+- Mining Drill, can only mine blocks next to you. Ineffective on the native inhabitants. No way to switch to your mining laser yet.
+- Ores now have a "research value" and when you smelt them adds to your research points.
+- Press E to open your inventory. Hover over items to see what they are.
+- "Basic" lighting added in. Unity has TERRIBLE support for shadows with tilesets which is why it doesn't cast light on anything! Super disappointing.
