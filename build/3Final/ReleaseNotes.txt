@@ -1,1 +1,11 @@
 Release Notes version 3 Final
+
+- Weapon switching, you can now switch between your laser and mining drill! Note that the laser is the only effective thing against the spiders.
+- Partly-procedural generation. The ores and the rocks in the middle of the map are generated based on Cellular Automata.
+- Spider Dens generate in the middle of the map, they will continually spawn new spiders. Watch out!
+- More robust battery system. You start with two small batteries, and energy use is more generically tied to inventories.
+- Research upgrades, you can decrease your energy use from drilling, shooting, and general movement by upgrading these with research points.
+- Life and Death, taking damage from spiders or trying to walk on lava will reduce your health. There's no way to heal right now, so you have to be careful. 
+- Respawning spawns you back on your ship, losing all the ores that you had on you. 
+- Disabled terrible lighting.
+- Removed Herobrine

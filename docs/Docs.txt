@@ -1,0 +1,29 @@
+# POC
+
+- Cool Robot (that's you) You are the robot. You run on electricity.
+- Mr. Bad Guy Spiders, They are bad guys. They run on being bad.
+- Robust Item System, Collect some ores with your laser.
+- Battery Charging, you run on batteries. Step on the charging pad or you'll be really slow and can't shoot.
+- Mining Asteroid, you are on an asteroid. You have a laser. You shoot the asteroid. You get ores.
+
+# Vertical Slice
+
+- You now have a ship with a smelter and a research console.
+	- Right click the smelter to smelt all your ores. Right now they are just destroyed which is okay because you can't make anything yet!
+	- Right click the research console to see your available research points. They are unusable right now because there's nothing to research!
+- Mining Drill, can only mine blocks next to you. Ineffective on the native inhabitants. No way to switch to your mining laser yet.
+- Ores now have a "research value" and when you smelt them adds to your research points.
+- Press E to open your inventory. Hover over items to see what they are.
+- "Basic" lighting added in. Unity has TERRIBLE support for shadows with tilesets which is why it doesn't cast light on anything! Super disappointing.
+
+# Final
+
+- Weapon switching, you can now switch between your laser and mining drill! Note that the laser is the only effective thing against the spiders.
+- Partly-procedural generation. The ores and the rocks in the middle of the map are generated based on Cellular Automata.
+- Spider Dens generate in the middle of the map, they will continually spawn new spiders. Watch out!
+- More robust battery system. You start with two small batteries, and energy use is more generically tied to inventories.
+- Research upgrades, you can decrease your energy use from drilling, shooting, and general movement by upgrading these with research points.
+- Life and Death, taking damage from spiders or trying to walk on lava will reduce your health. There's no way to heal right now, so you have to be careful. 
+- Respawning spawns you back on your ship, losing all the ores that you had on you. 
+- Disabled terrible lighting.
+- Removed Herobrine

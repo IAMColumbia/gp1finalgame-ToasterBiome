@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="ITEMS AND ITEM HANDLING">
+    <Position X="4.629" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="MAP">
+    <Position X="9.616" Y="0.569" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="PLAYER">
+    <Position X="13.363" Y="0.51" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="PHYSICAL OBJECTS">
+    <Position X="16.669" Y="1.433" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="ItemStack">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIQABAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\ItemStack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChargableItemStack">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAgAAAkAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\ChargableItemStack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Item">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAgAAAIAEAgAQAABBAQAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Weapon">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battery">
+    <Position X="4.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Battery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapGenerator">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAiACAAFBAAAAAAAAAAIAAQAAAAAAAEaAAABEY=</HashCode>
+      <FileName>Assets\Scripts\MapGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerManager" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAACEAAAAAAgAAAABAAAACAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\PlayerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerWeapons" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQACAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\PlayerWeapons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerHealth" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACIACAAAACgAAEAAAAARAAAAAAAAAAAAAAQBAg=</HashCode>
+      <FileName>Assets\PlayerHealth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerController" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAiAAAAAEAAAAAAAAAAAAAQAAAQAACAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Mob\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inventory" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBCAAAACAEAABUAAgAoAAAgABQAAAQAAAAQAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemSlot" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQSAAAAAAAAAAAAAAAAQAAAEABAgABAAABAGAQAAAIA=</HashCode>
+      <FileName>Assets\Scripts\ItemSlot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UIManager" Collapsed="true">
+    <Position X="12.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAEACAAAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemGameObject" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAQAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Objects\ItemGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResearchConsole" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAQAAACABAEAAAAAAAAAQEAAAAAAIBAIAEAAQEQA=</HashCode>
+      <FileName>Assets\Scripts\Objects\ResearchConsole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Smelter" Collapsed="true">
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Objects\Smelter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DropTile" Collapsed="true">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Tiles\DropTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
