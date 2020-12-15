@@ -14,23 +14,31 @@ public class Inventory : MonoBehaviour
     public List<ItemStack> items;
     public List<ItemSlot> itemSlots;
 
+    public ChargableItemStack startingBattery;
+    public ChargableItemStack startingBattery2;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         } else
         {
             Destroy(gameObject);
         }
+
+        AddItem(startingBattery);
+        AddItem(startingBattery2);
+
+        //give them a small battery to start
         RefreshUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void AddItem(ItemStack ItemS)
@@ -120,15 +128,129 @@ public class Inventory : MonoBehaviour
     public void RefreshUI()
     {
         oreText.text = "";
-        foreach(ItemStack itemStack in items)
+        foreach (ItemStack itemStack in items)
         {
             oreText.text += itemStack.item.name + ": " + itemStack.amount + "\n";
         }
 
+        for (int i = 0; i < itemSlots.Count; i++)
+        {
+            if(i < items.Count)
+            {
+               itemSlots[i].Item = items[i]; 
+            } 
+            else
+            {
+                itemSlots[i].Item = null;
+            }
+            
+            
+        }
+    }
+
+    public float GetTotalCharge()
+    {
+        float totalCharge = 0;
+        foreach (ItemStack item in items)
+        {
+            if (item is ChargableItemStack)
+            {
+                totalCharge += (item as ChargableItemStack).chargeLevel;
+            }
+        }
+        return totalCharge;
+    }
+
+    public float GetMaxCharge()
+    {
+        float totalCharge = 0;
+        foreach (ItemStack item in items)
+        {
+            if (item is ChargableItemStack)
+            {
+                totalCharge += (item as ChargableItemStack).getBattery().maxCharge;
+            }
+        }
+        return totalCharge;
+    }
+
+    public void LazyCharge(float amount)
+    {
+        if (amount > 0)
+        {
+            float remainder = amount;
+            foreach (ItemStack item in items)
+            {
+                if (item is ChargableItemStack)
+                {
+                    ChargableItemStack battery = item as ChargableItemStack;
+                    float difference = battery.getBattery().maxCharge - battery.chargeLevel;
+                    if (difference <= remainder)
+                    {
+                        battery.Charge(difference);
+                        remainder -= difference;
+                    }
+                    else
+                    {
+                        battery.Charge(remainder);
+                        remainder = 0;
+                    }
+
+                }
+
+                if (remainder <= 0) //that's all the juice we got!
+                {
+                    return;
+                }
+            }
+        } else
+        {
+            float remainder = -amount;
+            foreach (ItemStack item in items)
+            {
+                if (item is ChargableItemStack)
+                {
+                    ChargableItemStack battery = item as ChargableItemStack;
+
+                    if (remainder > battery.chargeLevel)
+                    {
+                        remainder -= battery.chargeLevel;
+                        battery.Charge(-battery.chargeLevel);
+                    }
+                    else
+                    {
+                        battery.Charge(-remainder);
+                        remainder = 0;
+                    }
+
+                }
+
+                if (remainder <= 0) //done taking juice!
+                {
+                    return;
+                }
+            }
+        }
+
+
+    }
+
+    public bool CanUse(float energyUse)
+    {
+        return energyUse <= GetTotalCharge();
+    }
+
+    public void Dump()
+    {
         for(int i = 0; i < items.Count; i++)
         {
-            itemSlots[i].Item = items[i];
+            Debug.Log(items[i].GetType());
+            if(items[i].GetType() != typeof(ChargableItemStack))
+            {
+                attemptRemove(items[i]);
+            }
         }
+        RefreshUI();
     }
 
 

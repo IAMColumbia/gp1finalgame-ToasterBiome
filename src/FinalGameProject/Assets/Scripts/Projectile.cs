@@ -50,16 +50,20 @@ public class Projectile : MonoBehaviour
                 }
             }
 
-            Destroy(gameObject);
 
         }
 
-        if(collision.gameObject.name == "Mr. Bad Guy")
+        if(collision.gameObject.tag == "Enemy")
         {
+            collision.gameObject.GetComponent<Enemy>().Die();
             Destroy(collision.gameObject);
+        }
+
+        if(collision.gameObject.name != "Player")
+        {
             Destroy(gameObject);
         }
-        
-        
+
+
     }
 }

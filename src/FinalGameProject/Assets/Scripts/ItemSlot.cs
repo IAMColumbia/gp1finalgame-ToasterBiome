@@ -10,6 +10,8 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private bool _pressable = false;
 
+    public Slider slider;
+
     public bool Pressable
     {
         get
@@ -48,6 +50,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             {
                 Image.enabled = false;
                 amountText.gameObject.SetActive(false);
+
             }
             else
             {
@@ -62,6 +65,16 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                     amountText.text = "";
                     amountText.gameObject.SetActive(false);
                 }
+
+                if(_item.GetType() == typeof(ChargableItemStack))
+                {
+                    Debug.Log("NA BATTERY");
+                    slider.gameObject.SetActive(true);
+                } else
+                {
+                    Debug.Log("NOT A BATTERY");
+                    slider.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -71,6 +84,11 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if(mouseOver)
         {
             inspectionBox.transform.position = Input.mousePosition;
+        }
+
+        if(Item is ChargableItemStack)
+        {
+            slider.value = (Item as ChargableItemStack).getChargePercentage();
         }
     }
 

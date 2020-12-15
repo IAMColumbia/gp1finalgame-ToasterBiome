@@ -16,7 +16,11 @@ public class ResearchWindow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pointText.text = "Total research points: " + ResearchConsole.RESEARCH_POINTS;
+        if(pointText != null)
+        {
+            pointText.text = "Total research points: " + ResearchConsole.RESEARCH_POINTS;
+        }
+        
     }
 
     public void CloseWindow()

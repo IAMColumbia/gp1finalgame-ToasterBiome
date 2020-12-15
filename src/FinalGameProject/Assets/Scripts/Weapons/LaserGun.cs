@@ -35,13 +35,13 @@ public class LaserGun : MonoBehaviour
         shotCooldown -= Time.deltaTime;
         if(Input.GetMouseButton(0))
         {
-            if(GameManager.instance.player.battery.CanUse(energyUse))
+            if(PlayerManager.instance.inventory.CanUse(energyUse * ResearchConsole.calculateBonus(ResearchConsole.UpgradeType.LASER)))
             {
                 if (shotCooldown <= 0)
                 {
                     Instantiate(projectile, offset.transform.position, transform.rotation);
                     shotCooldown = maxShotCooldown;
-                    GameManager.instance.player.battery.charge -= energyUse;
+                    PlayerManager.instance.inventory.LazyCharge(-energyUse * ResearchConsole.calculateBonus(ResearchConsole.UpgradeType.LASER));
                 }
             }
                 

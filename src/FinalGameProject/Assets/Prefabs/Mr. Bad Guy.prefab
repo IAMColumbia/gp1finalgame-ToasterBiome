@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6938110369516790674}
   m_Layer: 0
   m_Name: Mr. Bad Guy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f97b392df74be45b2b94317a757ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
+  speed: 2
+  sightRange: 16
+  spawner: {fileID: 0}
 --- !u!50 &6938110369516790674
 Rigidbody2D:
   serializedVersion: 4

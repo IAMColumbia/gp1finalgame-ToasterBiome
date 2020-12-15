@@ -11,39 +11,32 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 4f;
 
-
-    public Battery battery;
-
     public float passiveEnergyUse = 0.01f; //in seconds
     public float movementEnergyUse = 0.15f;
 
-    public TextMeshProUGUI batteryText;
-
     public TileBase currentTile;
-
-    public List<GameObject> weapons;
-
-    public GameObject currentWeapon;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        battery = new Battery();
     }
 
     // Update is called once per frame
     void Update()
     {
-        battery.charge -= passiveEnergyUse * Time.deltaTime;
-        batteryText.text = "Battery: " + battery.charge.ToString("F2") + "/" + battery.maxCharge;
+        PlayerManager.instance.inventory.LazyCharge(-passiveEnergyUse * Time.deltaTime);
         Vector3Int location = GameManager.instance.floorMap.WorldToCell(transform.position);
         currentTile = GameManager.instance.floorMap.GetTile(location);
 
         if(currentTile.name == "Charger")
         {
-            battery.charge += 4 * Time.deltaTime;
+            PlayerManager.instance.inventory.LazyCharge((4 + (1 + ResearchConsole.calculateBonus(ResearchConsole.UpgradeType.ENERGY))) * Time.deltaTime);
+        }
+        if(currentTile.name == "Lava")
+        {
+            PlayerManager.instance.health.Damage(4);
         }
 
 
@@ -54,10 +47,11 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
-            battery.charge -= movementEnergyUse * Time.deltaTime;
+            //battery.charge -= movementEnergyUse * Time.deltaTime;
+            PlayerManager.instance.inventory.LazyCharge(-movementEnergyUse * Time.deltaTime * ResearchConsole.calculateBonus(ResearchConsole.UpgradeType.ENERGY));
         }
         
-        if(battery.charge != 0)
+        if(PlayerManager.instance.inventory.GetTotalCharge() != 0)
         {
             rb.velocity = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed;
         } else

@@ -32,15 +32,15 @@ public class MiningDrill : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            if (GameManager.instance.player.battery.CanUse(energyUse))
+            if (PlayerManager.instance.inventory.CanUse(energyUse * ResearchConsole.calculateBonus(ResearchConsole.UpgradeType.DRILL)))
             {
                 activated = true;
                 bool mined = CheckMine();
                 if(mined)
                 {
-                    GameManager.instance.player.battery.charge -= energyUseBurst;
+                    PlayerManager.instance.inventory.LazyCharge(-energyUseBurst * ResearchConsole.calculateBonus(ResearchConsole.UpgradeType.DRILL));
                 }
-                GameManager.instance.player.battery.charge -= energyUse * Time.deltaTime;
+                PlayerManager.instance.inventory.LazyCharge(-energyUse * Time.deltaTime * ResearchConsole.calculateBonus(ResearchConsole.UpgradeType.DRILL));
             }
 
         }
